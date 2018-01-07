@@ -25,7 +25,7 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.3.RELEASE"
 }
 
-version = "1.0.0-SNAPSHOT"
+version = "0.0.1-SNAPSHOT"
 
 tasks {
 	withType<KotlinCompile> {

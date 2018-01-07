@@ -1,0 +1,25 @@
+app:
+  name: demo-application
+  version: 0.1.0
+server:
+  port: 8085
+
+---
+spring:
+    profiles: development
+server:
+    port: 9001
+
+---
+spring:
+    profiles: test
+server:
+    port: 9001
+
+---
+spring:
+    profiles: production
+app:
+name: demo-application
+server:
+    port: 9001

@@ -1,16 +1,16 @@
-package hello
+package com.demo
 
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class CustomerController(private val repository: CustomerRepository) {
+class UserController(private val repository: UserRepository) {
 
-	@GetMapping("/customers")
+	@GetMapping("/users")
 	fun findAll() = repository.findAll()
 
-	@GetMapping("/customers/{lastName}")
+	@GetMapping("/users/{lastName}")
 	fun findByLastName(@PathVariable lastName:String)
 			= repository.findByLastName(lastName)
 }
