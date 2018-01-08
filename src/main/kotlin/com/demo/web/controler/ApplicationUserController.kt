@@ -1,5 +1,6 @@
-package com.demo
+package com.demo.web.controler
 
+import com.demo.domain.ApplicationUserRepository
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController

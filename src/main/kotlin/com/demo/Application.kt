@@ -1,5 +1,7 @@
 package com.demo
 
+import com.demo.domain.User
+import com.demo.domain.UserRepository
 import org.slf4j.LoggerFactory
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.autoconfigure.SpringBootApplication
