@@ -12,21 +12,24 @@ This is a Spring Boot project with Kotlin and the following Spring tools are use
 ## Project Structure
 
 	+- com
-     		+- demo
-         		+- Application.java
-         		|
-         		+- domain
-         		|   	+- User.java
-         		|   	+- UserRepository.java
-         		...
-         		+- service
-         		|   	+- UserService.java
-         		...
+     	+- demo
+         	+- Application.kt
+         	|
+         	+- domain
+         	|   	+- User.kt
+         	|   	+- UserRepository.kt
+         	|		...
+         	+- service
+         	|   	+- UserService.kt
+         	|		...
 			+- web
-         		| 	+- controler
-             		|	+- UserController.java
-             		...
-             	|	+- filter
+         	 	+- controler
+                |	+- UserController.kt
+             	|	...
+             	+- filter
+             	|	...
+             	
+
 
 ## Prerequisits
 
