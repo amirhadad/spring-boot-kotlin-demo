@@ -11,6 +11,8 @@ This is a Spring Boot project with Kotlin and the following Spring tools are use
 
 ## Project Structure
 
+Following [spring.io](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-structuring-your-code.html) suggested structure and [this stackoverflow post](https://stackoverflow.com/questions/42946220/package-structure-in-spring-entity-vs-model-vs-controller), the project structure is as follows:
+
 	+- com
      	+- demo
          	+- Application.kt
@@ -33,7 +35,7 @@ This is a Spring Boot project with Kotlin and the following Spring tools are use
 
 ## Prerequisits
 
-+ IntelliJ IDEA 2017.1 
++ IntelliJ IDEA 2017.1+
 + Kotlin plugin 1.1.x
 + [Kotlin based Gradle](https://github.com/gradle/kotlin-dsl) Configuration
 
