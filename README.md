@@ -3,12 +3,14 @@
 This is a Fork of [this repository](https://github.com/sdeleuze/spring-boot-kotlin-demo) and turning into a boilerplate project with a standard structure.
 
 ##Overview
+
 This is a Spring Boot project with Kotlin and the following Spring tools are used: 
 
 + Spring Data JPA
 + Spring Security
 
 ##Project Structure
+
 	+- com
      		+- demo
          		+- Application.java
@@ -27,6 +29,7 @@ This is a Spring Boot project with Kotlin and the following Spring tools are use
              	|	+- filter
 
 ## Prerequisits
+
 + IntelliJ IDEA 2017.1 
 + Kotlin plugin 1.1.x
 + [Kotlin based Gradle](https://github.com/gradle/kotlin-dsl) Configuration
