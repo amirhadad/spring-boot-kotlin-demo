@@ -2,14 +2,14 @@
 
 This is a Fork of [this repository](https://github.com/sdeleuze/spring-boot-kotlin-demo) and turning into a boilerplate project with a standard structure.
 
-##Overview
+## Overview
 
 This is a Spring Boot project with Kotlin and the following Spring tools are used: 
 
 + Spring Data JPA
 + Spring Security
 
-##Project Structure
+## Project Structure
 
 	+- com
      		+- demo
