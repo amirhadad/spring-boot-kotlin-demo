@@ -25,7 +25,7 @@ Following [spring.io](https://docs.spring.io/spring-boot/docs/current/reference/
          	|   	+- UserService.kt
          	|		...
 		+- web
-         	 	+- controler
+         	 	+- controller
                 	|	+- UserController.kt
              	|	...
              	+- filter
