@@ -23,3 +23,12 @@ app:
 name: demo-application
 server:
     port: 9001
+
+----
+jwt:
+  header: Authorization
+  secret: Kwwewfalker2a;asdf!!!fka;jYY
+  expiration: 604800
+  route:
+    authentication:
+      path: auth

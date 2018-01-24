@@ -1,7 +1,6 @@
 package com.demo.security
 
 import com.demo.domain.User
-import io.jsonwebtoken.Claims
 import io.jsonwebtoken.JwtException
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
@@ -10,7 +9,7 @@ import org.springframework.beans.factory.annotation.Value
 class JwtUtil {
 
     @Value("\${jwt.secret}")
-    private val secret: String? = null
+    private val secret: String? = "deosn't work with @Value yet"
 
     /**
      * Tries to parse specified String as a JWT token. If successful, returns User object with username, id and role prefilled (extracted from token).
