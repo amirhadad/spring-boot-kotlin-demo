@@ -1,4 +1,4 @@
-package hello
+package com.demo
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

@@ -5,11 +5,13 @@ import io.jsonwebtoken.JwtException
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.context.annotation.PropertySource
+import org.springframework.stereotype.Component
 
 class JwtUtil {
 
     @Value("\${jwt.secret}")
-    private val secret: String? = "deosn't work with @Value yet"
+    private val secret: String? = "Doesn't come from yml properties file!"
 
     /**
      * Tries to parse specified String as a JWT token. If successful, returns User object with username, id and role prefilled (extracted from token).
@@ -50,7 +52,7 @@ class JwtUtil {
     fun generateToken(u: User): String {
         val claims = Jwts.claims().setSubject(u.firstName)
         claims.put("userId", u.id.toString() + "")
-        claims.put("lastname", u.lastName)
+        claims.put("lastName", u.lastName)
 
         return Jwts.builder()
                 .setClaims(claims)

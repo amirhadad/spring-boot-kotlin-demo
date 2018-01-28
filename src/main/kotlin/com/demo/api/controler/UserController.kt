@@ -16,7 +16,7 @@ class UserController(private val repository: UserRepository) {
 
         val usersIterable :MutableIterable<User>  = repository.findAll()
         usersIterable.forEach{user ->
-            user.firstName = "TESTTEST"
+            //user.firstName = "TESTTEST"
         }
         return usersIterable
     }

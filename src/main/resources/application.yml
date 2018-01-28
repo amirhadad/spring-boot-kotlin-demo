@@ -4,6 +4,14 @@ app:
 server:
   port: 8085
 
+jwt:
+  header: Authorization
+  secret: Kwwewfalker2a;asdf!!!fka;jYY
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
+
 ---
 spring:
     profiles: development
@@ -25,10 +33,3 @@ server:
     port: 9001
 
 ----
-jwt:
-  header: Authorization
-  secret: Kwwewfalker2a;asdf!!!fka;jYY
-  expiration: 604800
-  route:
-    authentication:
-      path: auth

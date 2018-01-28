@@ -57,7 +57,11 @@ dependencies {
 	compile("io.jsonwebtoken:jjwt:0.2")
 	compile("org.jetbrains.kotlin:kotlin-reflect")
 	compile("com.fasterxml.jackson.module:jackson-module-kotlin")
-	testCompile("org.jetbrains.spek:spek-api:1.1.5")
+
+
+
+    testCompile("org.junit.platform:junit-platform-runner:1.0.3")
+    testCompile("org.jetbrains.spek:spek-api:1.1.5")
 	testRuntime("org.jetbrains.spek:spek-junit-platform-engine:1.1.5")
 	testCompile("org.springframework.boot:spring-boot-starter-test") {
 		exclude(module = "junit")
@@ -71,7 +75,7 @@ dependencies {
 configure<JUnitPlatformExtension> {
     filters {
         engines {
-            include("spek")
+            include("spek", "junit-jupiter", "junit-vintage")
         }
     }
 }
