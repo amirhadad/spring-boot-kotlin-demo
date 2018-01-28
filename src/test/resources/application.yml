@@ -3,3 +3,11 @@ app:
   version: 0.1.0
 server:
   port: 9100
+  
+jwt:
+  header: Authorization
+  secret: Kwwewfalker2a;asdf!!!fka;jYY
+  expiration: 604800
+  route:
+    authentication:
+      path: auth
