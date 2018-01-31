@@ -13,7 +13,7 @@ object JwtUtilTest: Spek( {
         val user = User("testFirstName","testLastName")
         on("generating jwt token") {
             val token = JwtUtil().generateToken(user)
-            it("generate a non-empty string") {
+            it("generates a non-empty string") {
                 assertTrue("Token is not empty", token.isNotEmpty())
             }
             it("jwt should be deserializable to user object") {

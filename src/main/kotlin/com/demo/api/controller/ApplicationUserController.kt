@@ -1,4 +1,4 @@
-package com.demo.api.controler
+package com.demo.api.controller
 
 import com.demo.domain.ApplicationUserRepository
 import org.springframework.web.bind.annotation.GetMapping

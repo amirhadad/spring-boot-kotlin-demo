@@ -1,4 +1,4 @@
-package com.demo.api.controler
+package com.demo.api.controller
 
 import com.demo.domain.User
 import com.demo.domain.UserRepository

@@ -1,3 +1,4 @@
+import io.spring.gradle.dependencymanagement.internal.pom.Pom
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import org.gradle.api.plugins.ExtensionAware
 
@@ -5,6 +6,8 @@ import org.junit.platform.gradle.plugin.EnginesExtension
 import org.junit.platform.gradle.plugin.FiltersExtension
 import org.junit.platform.gradle.plugin.JUnitPlatformExtension
 
+apply {plugin("maven")}
+apply {plugin("java")}
 buildscript {
 	repositories {
 		mavenCentral()
@@ -16,6 +19,7 @@ buildscript {
 		classpath("org.junit.platform:junit-platform-gradle-plugin:1.0.2")
 	}
 }
+
 
 apply {
 	plugin("org.springframework.boot")
@@ -40,6 +44,11 @@ tasks {
 			freeCompilerArgs = listOf("-Xjsr305=strict")
 		}
 	}
+
+    withType<GradleBuild>{
+        finalizedBy("publishToMavenLocal")
+    }
+
 }
 
 repositories {
@@ -71,6 +80,44 @@ dependencies {
 }
 
 
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile("com.google.guava:guava:13.0.1")
+    compile("joda-time:joda-time:2.1")
+
+    testCompile("junit:junit:4.11")
+    testCompile("org.mockito:mockito-core:1.9.5")
+}
+
+tasks {
+    "writeNewPom" {
+        doLast {
+            project.withConvention(MavenPluginConvention::class) {
+                pom {
+                    project {
+                        groupId = "com.demo"
+                        artifactId = "katlin-spring-boot"
+                        version = "0.0.1-SNAPSHOT"
+                        withGroovyBuilder {
+                            "inceptionYear"("2018")
+                            "licenses" {
+                                "license" {
+                                    "name"("The Apache Software License, Version 2.0")
+                                    "url"("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                                    "distribution"("repo")
+                                }
+                            }
+                        }
+                    }
+                }
+            }.writeTo("$buildDir/pom.xml")
+        }
+    }
+}
+
 
 configure<JUnitPlatformExtension> {
     filters {
@@ -94,3 +141,8 @@ fun FiltersExtension.engines(setup: EnginesExtension.() -> Unit) {
 	}
 }
 
+tasks.withType<Jar> {
+    configurations["compileClasspath"].forEach { file: File ->
+        from(zipTree(file.absoluteFile))
+    }
+}
